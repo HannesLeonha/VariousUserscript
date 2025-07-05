@@ -40,13 +40,13 @@ function recursiveAiImageCheck(node) {
 }
 
 // Container of main content
-document.querySelectorAll("div#rcnt > div:has(h1)").forEach((node) => {
+for(let node of document.querySelector("div#rcnt > div:has(h1)").children) {
     if(node.id === 'center_col') return;
 
     if(recursiveAiImageCheck(node)) {
         node.remove();
     }
-});
+};
 
 // Main content
 document.querySelectorAll("div#rso > div").forEach((node) => {
